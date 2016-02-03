@@ -69,20 +69,28 @@
 		CEEA18EC1C6064E8009BE347 /* menu-tab-test */ = {
 			isa = PBXGroup;
 			children = (
+				CEEA19171C626527009BE347 /* ViewControllers */,
 				CEEA18ED1C6064E8009BE347 /* AppDelegate.swift */,
-				CEEA18EF1C6064E8009BE347 /* FirstViewController.swift */,
-				CEEA18F11C6064E8009BE347 /* SecondViewController.swift */,
 				CEEA18F31C6064E8009BE347 /* Main.storyboard */,
 				CEEA18F61C6064E8009BE347 /* Assets.xcassets */,
 				CEEA18F81C6064E8009BE347 /* LaunchScreen.storyboard */,
 				CEEA18FB1C6064E8009BE347 /* Info.plist */,
-				CEEA19011C60659D009BE347 /* MenuViewController.swift */,
 				CEEA19031C60F081009BE347 /* MenuContainerView.swift */,
-				CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */,
-				CEEA19111C6248A2009BE347 /* MyNavViewController.swift */,
 				CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */,
 			);
 			path = "menu-tab-test";
+			sourceTree = "<group>";
+		};
+		CEEA19171C626527009BE347 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA18EF1C6064E8009BE347 /* FirstViewController.swift */,
+				CEEA18F11C6064E8009BE347 /* SecondViewController.swift */,
+				CEEA19011C60659D009BE347 /* MenuViewController.swift */,
+				CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */,
+				CEEA19111C6248A2009BE347 /* MyNavViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
