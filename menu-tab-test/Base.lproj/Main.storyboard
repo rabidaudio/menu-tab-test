@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="1621" y="45"/>
         </scene>
-        <!--Keyboard Avoid View Controller-->
+        <!--My Input View Controller-->
         <scene sceneID="xjI-2h-ydD">
             <objects>
-                <viewController id="dfT-Md-qKd" customClass="KeyboardAvoidViewController" customModule="menu_tab_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dfT-Md-qKd" customClass="MyInputViewController" customModule="menu_tab_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8yN-MA-QgI"/>
                         <viewControllerLayoutGuide type="bottom" id="2jE-QW-I3n"/>
@@ -225,37 +225,128 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-5f-qEw">
-                                <rect key="frame" x="270" y="323" width="60" height="30"/>
+                                <rect key="frame" x="270" y="437" width="60" height="30"/>
                                 <state key="normal" title="continue"/>
+                                <connections>
+                                    <action selector="submit:" destination="dfT-Md-qKd" eventType="touchUpInside" id="TSY-DM-JDL"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLE-M7-cm9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fmo-gc-GCo">
+                                <rect key="frame" x="90" y="133" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="qCK-q8-Lcg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yy-FE-zCw">
+                                <rect key="frame" x="90" y="171" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="zWi-5G-5Zf"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGr-0i-ciu">
+                                <rect key="frame" x="90" y="209" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="ZXY-eo-cHz"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySx-bs-9uG">
                                 <rect key="frame" x="90" y="247" width="420" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="MiF-f7-c9F"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOw-2n-EG0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLE-M7-cm9">
                                 <rect key="frame" x="90" y="285" width="420" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="nKG-z6-Cdg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOw-2n-EG0">
+                                <rect key="frame" x="90" y="323" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="gST-v8-vKk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heX-P7-nzo">
+                                <rect key="frame" x="90" y="361" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hopToNextInput:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="Ksn-U7-ucS"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S02-Yc-JWN">
+                                <rect key="frame" x="90" y="399" width="420" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="submit:" destination="dfT-Md-qKd" eventType="primaryActionTriggered" id="iFx-cA-ruq"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ieA-5f-qEw" firstAttribute="centerX" secondItem="sjx-3O-uNt" secondAttribute="centerX" id="3tQ-hE-P81"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="centerY" secondItem="sjx-3O-uNt" secondAttribute="centerY" id="RIg-UE-4EM"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="centerX" secondItem="sjx-3O-uNt" secondAttribute="centerX" id="SIe-He-khq"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="trailing" secondItem="QLE-M7-cm9" secondAttribute="trailing" id="VCz-pM-dpd"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="top" secondItem="QLE-M7-cm9" secondAttribute="bottom" constant="8" symbolic="YES" id="kwb-qk-b6S"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="centerX" secondItem="QLE-M7-cm9" secondAttribute="centerX" id="smf-B4-3hB"/>
-                            <constraint firstItem="ieA-5f-qEw" firstAttribute="top" secondItem="eOw-2n-EG0" secondAttribute="bottom" constant="8" symbolic="YES" id="t4q-hO-5fe"/>
-                            <constraint firstItem="QLE-M7-cm9" firstAttribute="width" secondItem="sjx-3O-uNt" secondAttribute="width" multiplier="0.7" id="vBy-PG-KoE"/>
-                            <constraint firstItem="eOw-2n-EG0" firstAttribute="leading" secondItem="QLE-M7-cm9" secondAttribute="leading" id="zyq-Nd-yOj"/>
+                            <constraint firstItem="1Yy-FE-zCw" firstAttribute="leading" secondItem="Fmo-gc-GCo" secondAttribute="leading" id="696-Hq-x2w"/>
+                            <constraint firstItem="1Yy-FE-zCw" firstAttribute="top" secondItem="Fmo-gc-GCo" secondAttribute="bottom" constant="8" symbolic="YES" id="7fy-iE-sTX"/>
+                            <constraint firstItem="QLE-M7-cm9" firstAttribute="leading" secondItem="ySx-bs-9uG" secondAttribute="leading" id="8YB-fs-AsI"/>
+                            <constraint firstItem="heX-P7-nzo" firstAttribute="top" secondItem="eOw-2n-EG0" secondAttribute="bottom" constant="8" symbolic="YES" id="CJP-V8-roW"/>
+                            <constraint firstItem="eOw-2n-EG0" firstAttribute="leading" secondItem="QLE-M7-cm9" secondAttribute="leading" id="DSh-qW-0bA"/>
+                            <constraint firstItem="ieA-5f-qEw" firstAttribute="centerX" secondItem="S02-Yc-JWN" secondAttribute="centerX" id="EHK-WF-R0c"/>
+                            <constraint firstItem="1Yy-FE-zCw" firstAttribute="trailing" secondItem="Fmo-gc-GCo" secondAttribute="trailing" id="H01-2j-lbH"/>
+                            <constraint firstItem="eOw-2n-EG0" firstAttribute="trailing" secondItem="QLE-M7-cm9" secondAttribute="trailing" id="HIH-ge-v9b"/>
+                            <constraint firstItem="ySx-bs-9uG" firstAttribute="centerX" secondItem="zGr-0i-ciu" secondAttribute="centerX" id="Hpr-uh-Rqp"/>
+                            <constraint firstItem="QLE-M7-cm9" firstAttribute="trailing" secondItem="ySx-bs-9uG" secondAttribute="trailing" id="Lor-nq-3DZ"/>
+                            <constraint firstItem="heX-P7-nzo" firstAttribute="trailing" secondItem="eOw-2n-EG0" secondAttribute="trailing" id="Pmi-WX-7vc"/>
+                            <constraint firstItem="zGr-0i-ciu" firstAttribute="leading" secondItem="1Yy-FE-zCw" secondAttribute="leading" id="PxR-eN-Bzm"/>
+                            <constraint firstItem="ySx-bs-9uG" firstAttribute="trailing" secondItem="zGr-0i-ciu" secondAttribute="trailing" id="UDd-nd-X2P"/>
+                            <constraint firstItem="S02-Yc-JWN" firstAttribute="centerX" secondItem="heX-P7-nzo" secondAttribute="centerX" id="Uno-0F-49b"/>
+                            <constraint firstItem="ieA-5f-qEw" firstAttribute="top" secondItem="S02-Yc-JWN" secondAttribute="bottom" constant="8" symbolic="YES" id="X2f-0U-viO"/>
+                            <constraint firstItem="S02-Yc-JWN" firstAttribute="trailing" secondItem="heX-P7-nzo" secondAttribute="trailing" id="Xiv-YE-ZI2"/>
+                            <constraint firstItem="ieA-5f-qEw" firstAttribute="centerY" secondItem="S02-Yc-JWN" secondAttribute="centerY" id="YLe-hp-eUN"/>
+                            <constraint firstItem="heX-P7-nzo" firstAttribute="centerX" secondItem="eOw-2n-EG0" secondAttribute="centerX" id="YoJ-jk-MAE"/>
+                            <constraint firstItem="Fmo-gc-GCo" firstAttribute="centerX" secondItem="sjx-3O-uNt" secondAttribute="centerX" id="dfJ-wV-6Nm"/>
+                            <constraint firstItem="QLE-M7-cm9" firstAttribute="centerY" secondItem="sjx-3O-uNt" secondAttribute="centerY" id="dxq-Ja-vSo"/>
+                            <constraint firstItem="heX-P7-nzo" firstAttribute="leading" secondItem="eOw-2n-EG0" secondAttribute="leading" id="egl-0t-QL6"/>
+                            <constraint firstItem="1Yy-FE-zCw" firstAttribute="centerX" secondItem="Fmo-gc-GCo" secondAttribute="centerX" id="fYd-GO-3W2"/>
+                            <constraint firstItem="ieA-5f-qEw" firstAttribute="top" secondItem="S02-Yc-JWN" secondAttribute="bottom" constant="8" symbolic="YES" id="fhY-Ls-ejs"/>
+                            <constraint firstItem="QLE-M7-cm9" firstAttribute="centerX" secondItem="ySx-bs-9uG" secondAttribute="centerX" id="gAd-RN-Lu1"/>
+                            <constraint firstItem="eOw-2n-EG0" firstAttribute="top" secondItem="QLE-M7-cm9" secondAttribute="bottom" constant="8" symbolic="YES" id="j6x-fS-80O"/>
+                            <constraint firstItem="zGr-0i-ciu" firstAttribute="trailing" secondItem="1Yy-FE-zCw" secondAttribute="trailing" id="nCM-qy-wzj"/>
+                            <constraint firstItem="S02-Yc-JWN" firstAttribute="top" secondItem="heX-P7-nzo" secondAttribute="bottom" constant="8" symbolic="YES" id="nTU-2c-aEe"/>
+                            <constraint firstItem="Fmo-gc-GCo" firstAttribute="width" secondItem="sjx-3O-uNt" secondAttribute="width" multiplier="0.7" id="qIE-Sy-cVz"/>
+                            <constraint firstItem="eOw-2n-EG0" firstAttribute="centerX" secondItem="QLE-M7-cm9" secondAttribute="centerX" id="sCo-JI-nag"/>
+                            <constraint firstItem="ySx-bs-9uG" firstAttribute="leading" secondItem="zGr-0i-ciu" secondAttribute="leading" id="tCW-ND-RcE"/>
+                            <constraint firstItem="zGr-0i-ciu" firstAttribute="top" secondItem="1Yy-FE-zCw" secondAttribute="bottom" constant="8" symbolic="YES" id="tNt-Od-bfB"/>
+                            <constraint firstItem="QLE-M7-cm9" firstAttribute="top" secondItem="ySx-bs-9uG" secondAttribute="bottom" constant="8" symbolic="YES" id="u94-p8-ptb"/>
+                            <constraint firstItem="zGr-0i-ciu" firstAttribute="centerX" secondItem="1Yy-FE-zCw" secondAttribute="centerX" id="uNM-uD-ibx"/>
+                            <constraint firstItem="S02-Yc-JWN" firstAttribute="leading" secondItem="heX-P7-nzo" secondAttribute="leading" id="y1y-3D-3pb"/>
+                            <constraint firstItem="ySx-bs-9uG" firstAttribute="top" secondItem="zGr-0i-ciu" secondAttribute="bottom" constant="8" symbolic="YES" id="yUB-eF-SmB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YLe-hp-eUN"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <segue destination="COP-er-kRU" kind="show" identifier="continue" id="cf7-PF-g6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnB-ZL-dYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1251" y="45"/>
+            <point key="canvasLocation" x="-1240" y="45"/>
         </scene>
         <!--Menu Container View Controller-->
         <scene sceneID="isE-pX-nEa">

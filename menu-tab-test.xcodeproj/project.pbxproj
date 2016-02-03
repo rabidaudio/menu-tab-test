@@ -18,6 +18,7 @@
 		CEEA190A1C61C402009BE347 /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */; };
 		CEEA19121C6248A2009BE347 /* MyNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19111C6248A2009BE347 /* MyNavViewController.swift */; };
 		CEEA19141C6250E3009BE347 /* KeyboardAvoidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */; };
+		CEEA19161C62622F009BE347 /* MyInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19151C62622F009BE347 /* MyInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
 		CEEA19111C6248A2009BE347 /* MyNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavViewController.swift; sourceTree = "<group>"; };
 		CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidViewController.swift; sourceTree = "<group>"; };
+		CEEA19151C62622F009BE347 /* MyInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		CEEA18E11C6064E8009BE347 = {
 			isa = PBXGroup;
 			children = (
+				CEEA19151C62622F009BE347 /* MyInputViewController.swift */,
 				CEEA18EC1C6064E8009BE347 /* menu-tab-test */,
 				CEEA18EB1C6064E8009BE347 /* Products */,
 			);
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA19041C60F081009BE347 /* MenuContainerView.swift in Sources */,
+				CEEA19161C62622F009BE347 /* MyInputViewController.swift in Sources */,
 				CEEA18F21C6064E8009BE347 /* SecondViewController.swift in Sources */,
 				CEEA18EE1C6064E8009BE347 /* AppDelegate.swift in Sources */,
 				CEEA190A1C61C402009BE347 /* MenuContainerViewController.swift in Sources */,
