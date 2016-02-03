@@ -45,7 +45,6 @@ class MenuContainerView: UIView {
         didSet {
             if rightMenu != nil {
                 scrollView.addSubview(rightMenu!)
-//                setNeedsDisplayInRect(rightRect)
             }
         }
     }
@@ -100,21 +99,15 @@ class MenuContainerView: UIView {
         // make the scrollView fill up the screen
         scrollView.frame = bounds
         
-        print("self frame:", frame, "bounds: ", bounds)
-        
         //make the scroll view's total content area be the full screen plus the left and right menus
         let scrollViewSize = CGSize(width: screenSize.width + 2*menuWidth, height: screenSize.height)
         scrollView.contentSize = scrollViewSize
-        
-        print("scrollview frame: ", scrollView.frame, "contentSize: ", scrollView.contentSize)
         
         //set the scroll view's starting point to the main content
         scrollView.contentOffset = mainOrigin
         
         //make the main view fill up the whole screen
         mainContainerView.frame = CGRect(origin: mainOrigin, size: screenSize)
-        
-        print("main frame: ", mainContainerView.frame, "subviews: ", mainContainerView.subviews.map { v in "\(v.description): \(v.frame)" })
         
         if leftMenu != nil {
             //make the left menu fill the correct space
@@ -125,9 +118,6 @@ class MenuContainerView: UIView {
             //make the left menu fill the correct space
             rightMenu!.frame = CGRect(origin: rightOrigin, size: menuSize)
         }
-        
-        scrollView.backgroundColor = UIColor.redColor()
-        mainContainerView.backgroundColor = UIColor.blueColor()
     }
     
     // MARK: math
@@ -149,7 +139,7 @@ class MenuContainerView: UIView {
     
     // the origin cordinate for the right menu
     private var rightOrigin: CGPoint {
-        return CGPoint(x: scrollView.contentSize.width - bounds.width, y: 0)
+        return CGPoint(x: scrollView.contentSize.width - menuWidth, y: 0)
     }
     
     // the total visible screen size

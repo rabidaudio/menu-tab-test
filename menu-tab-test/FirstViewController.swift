@@ -19,14 +19,7 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func openLeftMenu(sender: AnyObject) {
-//        MainContainerViewController.toggleLeftMenu()
-        MenuContainerView.parentMenuContainer(self)?.toggleLeftMenu()
-    }
-
-    @IBAction func openRightMenu(sender: AnyObject) {
-//        MainContainerViewController.toggleRightMenu()
-        MenuContainerView.parentMenuContainer(self)?.toggleRightMenu()
-    }
+    
+    
 }
 

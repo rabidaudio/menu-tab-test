@@ -16,13 +16,13 @@ class MenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("left menu loaded!", tableView.dataSource, tableView.delegate)
+        print("menu loaded!", tableView.dataSource, tableView.delegate)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("left menu frame: ", view.frame)
+        print("menu frame: ", view.frame)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -42,6 +42,7 @@ class MenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let item = menuItems[indexPath.row]
         print("selected \(item)")
+        (parentViewController?.view as? MenuContainerView)?.closeMenu()
     }
     
 }
