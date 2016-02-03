@@ -25,7 +25,7 @@ class MenuContainerView: UIView {
     // container view for main content
     private var mainContainerView = UIView()
     
-    // tell the controller which view to use for left menu (e.g. storyboard.instantiateViewControllerWithIdentifier)
+    // tell the controller which view to use for left menu
     var leftMenu: UIView? {
         willSet {
             leftMenu?.removeFromSuperview()
@@ -33,7 +33,6 @@ class MenuContainerView: UIView {
         didSet {
             if leftMenu != nil {
                 scrollView.addSubview(leftMenu!)
-//                setNeedsDisplayInRect(leftRect)
             }
         }
     }
@@ -59,7 +58,6 @@ class MenuContainerView: UIView {
             if mainView != nil {
                 mainContainerView.addSubview(mainView!)
                 mainView!.frame = mainContainerView.bounds // fill
-//                setNeedsDisplay()
             }
         }
     }
@@ -94,21 +92,11 @@ class MenuContainerView: UIView {
         
         self.tap = UITapGestureRecognizer(target: self, action: "mainViewTap")
 //        tap.cancelsTouchesInView = false //allow taps to continue to propigate
-        
-        // listen for open/close notifications
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleLeftMenu", name: "toggleLeftMenu", object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleRightMenu", name: "toggleRightMenu", object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "closeMenu", name: "closeMenu", object: nil)
     }
     
-//    deinit {
-//        //stop listening to notifications
-//        NSNotificationCenter.defaultCenter().removeObserver(self)
-//    }
-    
-    // calculate the bounds of all the views
-    
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         // make the scrollView fill up the screen
         scrollView.frame = bounds
         
@@ -210,7 +198,6 @@ class MenuContainerView: UIView {
     }
     
     func toggleLeftMenu() {
-        guard isVisible else { return }
         if isLeftMenuOpen {
             closeMenu()
         }else{
@@ -219,7 +206,6 @@ class MenuContainerView: UIView {
     }
     
     func toggleRightMenu() {
-        guard isVisible else { return }
         if isRightMenuOpen {
             closeMenu()
         }else{
@@ -228,7 +214,6 @@ class MenuContainerView: UIView {
     }
     
     func closeMenu(){
-        guard isVisible else { return }
         scrollView.scrollRectToVisible(mainContainerView.frame, animated: animated)
         if tap != nil {
             mainContainerView.removeGestureRecognizer(tap!)
@@ -258,20 +243,6 @@ class MenuContainerView: UIView {
         }
     }
     
-
-    // MARK: shortcuts for menu operations
-//    static func toggleLeftMenu(){
-//        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftMenu", object: nil)
-//    }
-//    
-//    static func toggleRightMenu(){
-//        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightMenu", object: nil)
-//    }
-//    
-//    static func closeMenu(){
-//        NSNotificationCenter.defaultCenter().postNotificationName("closeMenu", object: nil)
-//    }
-    
     static func parentMenuContainer(viewController: UIViewController) -> MenuContainerView? {
         var vc: UIViewController? = viewController
         while vc != nil {
@@ -290,9 +261,5 @@ extension UIView {
         for view in subviews {
             view.removeFromSuperview()
         }
-    }
-    
-    private var isVisible: Bool {
-        return window != nil
     }
 }
