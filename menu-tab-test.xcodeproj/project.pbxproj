@@ -13,6 +13,9 @@
 		CEEA18F51C6064E8009BE347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA18F31C6064E8009BE347 /* Main.storyboard */; };
 		CEEA18F71C6064E8009BE347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA18F61C6064E8009BE347 /* Assets.xcassets */; };
 		CEEA18FA1C6064E8009BE347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA18F81C6064E8009BE347 /* LaunchScreen.storyboard */; };
+		CEEA19021C60659D009BE347 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19011C60659D009BE347 /* MenuViewController.swift */; };
+		CEEA19041C60F081009BE347 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19031C60F081009BE347 /* MainContainerViewController.swift */; };
+		CEEA19061C6171BD009BE347 /* MyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19051C6171BD009BE347 /* MyMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CEEA18F61C6064E8009BE347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEA18F91C6064E8009BE347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEA18FB1C6064E8009BE347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEEA19011C60659D009BE347 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CEEA19031C60F081009BE347 /* MainContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		CEEA19051C6171BD009BE347 /* MyMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				CEEA18F61C6064E8009BE347 /* Assets.xcassets */,
 				CEEA18F81C6064E8009BE347 /* LaunchScreen.storyboard */,
 				CEEA18FB1C6064E8009BE347 /* Info.plist */,
+				CEEA19011C60659D009BE347 /* MenuViewController.swift */,
+				CEEA19031C60F081009BE347 /* MainContainerViewController.swift */,
+				CEEA19051C6171BD009BE347 /* MyMainViewController.swift */,
 			);
 			path = "menu-tab-test";
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEA19041C60F081009BE347 /* MainContainerViewController.swift in Sources */,
+				CEEA19061C6171BD009BE347 /* MyMainViewController.swift in Sources */,
 				CEEA18F21C6064E8009BE347 /* SecondViewController.swift in Sources */,
 				CEEA18EE1C6064E8009BE347 /* AppDelegate.swift in Sources */,
 				CEEA18F01C6064E8009BE347 /* FirstViewController.swift in Sources */,
+				CEEA19021C60659D009BE347 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
