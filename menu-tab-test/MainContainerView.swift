@@ -6,15 +6,14 @@
 //  Copyright © 2016 fixd. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class MainContainerViewController: UIViewController {
+class MenuContainerView: UIView {
     
     // adjust the menu size as a percentage of total screen space
     var menuWidthPercentage: CGFloat = 0.625 {
         didSet {
-            configureViews()
+            setNeedsDisplay()
         }
     }
     
@@ -34,7 +33,7 @@ class MainContainerViewController: UIViewController {
         didSet {
             if leftMenu != nil {
                 scrollView.addSubview(leftMenu!)
-                configureViews()
+//                setNeedsDisplayInRect(leftRect)
             }
         }
     }
@@ -47,7 +46,7 @@ class MainContainerViewController: UIViewController {
         didSet {
             if rightMenu != nil {
                 scrollView.addSubview(rightMenu!)
-                configureViews()
+//                setNeedsDisplayInRect(rightRect)
             }
         }
     }
@@ -59,13 +58,16 @@ class MainContainerViewController: UIViewController {
         didSet {
             if mainView != nil {
                 mainContainerView.addSubview(mainView!)
-                configureViews()
+                mainView!.frame = mainContainerView.bounds // fill
+//                setNeedsDisplay()
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var tap: UITapGestureRecognizer?
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         
         //configure scrollView
         scrollView.scrollEnabled = false
@@ -77,7 +79,7 @@ class MainContainerViewController: UIViewController {
         scrollView.maximumZoomScale = 1
         
         //add scrollview to view
-        view.addSubview(scrollView)
+        addSubview(scrollView)
         
         // add container to scrollView
         scrollView.addSubview(mainContainerView)
@@ -85,39 +87,46 @@ class MainContainerViewController: UIViewController {
         // configure gestures
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: "leftSwipe")
         leftSwipe.direction = .Left
-        view.addGestureRecognizer(leftSwipe)
+        addGestureRecognizer(leftSwipe)
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: "rightSwipe")
         rightSwipe.direction = .Right
-        view.addGestureRecognizer(rightSwipe)
+        addGestureRecognizer(rightSwipe)
         
-        mainContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "mainViewTap"))
-        
+        self.tap = UITapGestureRecognizer(target: self, action: "mainViewTap")
+//        tap.cancelsTouchesInView = false //allow taps to continue to propigate
         
         // listen for open/close notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleLeftMenu", name: "toggleLeftMenu", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleRightMenu", name: "toggleRightMenu", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "closeMenu", name: "closeMenu", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleLeftMenu", name: "toggleLeftMenu", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleRightMenu", name: "toggleRightMenu", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "closeMenu", name: "closeMenu", object: nil)
     }
     
-    deinit {
-        //stop listening to notifications
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
+//    deinit {
+//        //stop listening to notifications
+//        NSNotificationCenter.defaultCenter().removeObserver(self)
+//    }
     
     // calculate the bounds of all the views
-    private func configureViews() {
+    
+    override func layoutSubviews() {
         // make the scrollView fill up the screen
-        scrollView.frame = view.bounds
+        scrollView.frame = bounds
+        
+        print("self frame:", frame, "bounds: ", bounds)
         
         //make the scroll view's total content area be the full screen plus the left and right menus
         let scrollViewSize = CGSize(width: screenSize.width + 2*menuWidth, height: screenSize.height)
         scrollView.contentSize = scrollViewSize
+        
+        print("scrollview frame: ", scrollView.frame, "contentSize: ", scrollView.contentSize)
         
         //set the scroll view's starting point to the main content
         scrollView.contentOffset = mainOrigin
         
         //make the main view fill up the whole screen
         mainContainerView.frame = CGRect(origin: mainOrigin, size: screenSize)
+        
+        print("main frame: ", mainContainerView.frame, "subviews: ", mainContainerView.subviews.map { v in "\(v.description): \(v.frame)" })
         
         if leftMenu != nil {
             //make the left menu fill the correct space
@@ -128,14 +137,12 @@ class MainContainerViewController: UIViewController {
             //make the left menu fill the correct space
             rightMenu!.frame = CGRect(origin: rightOrigin, size: menuSize)
         }
+        
+        scrollView.backgroundColor = UIColor.redColor()
+        mainContainerView.backgroundColor = UIColor.blueColor()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        configureViews()
-    }
-    
-    // math
+    // MARK: math
     
     //the width of menus in pixels
     private var menuWidth: CGFloat {
@@ -154,17 +161,27 @@ class MainContainerViewController: UIViewController {
     
     // the origin cordinate for the right menu
     private var rightOrigin: CGPoint {
-        return CGPoint(x: scrollView.contentSize.width - view.bounds.width, y: 0)
+        return CGPoint(x: scrollView.contentSize.width - bounds.width, y: 0)
     }
     
     // the total visible screen size
     private var screenSize: CGSize {
-        return view.bounds.size
+        return bounds.size
     }
     
     private var menuSize: CGSize {
         return CGSize(width: menuWidth, height: screenSize.height)
     }
+    
+    private var leftRect: CGRect {
+        return CGRect(origin: leftOrigin, size: screenSize)
+    }
+    
+    private var rightRect: CGRect {
+        return CGRect(origin: rightOrigin, size: screenSize)
+    }
+    
+    // MARK: menu control
     
     var isLeftMenuOpen: Bool {
         return scrollView.contentOffset.x < menuWidth
@@ -180,17 +197,20 @@ class MainContainerViewController: UIViewController {
     
     func openLeftMenu(){
         if leftMenu != nil {
-            scrollView.scrollRectToVisible(CGRect(origin: leftOrigin, size: screenSize), animated: animated)
+            scrollView.scrollRectToVisible(leftRect, animated: animated)
+            mainContainerView.addGestureRecognizer(tap!)
         }
     }
     
     func openRightMenu(){
         if rightMenu != nil {
-            scrollView.scrollRectToVisible(CGRect(origin: rightOrigin, size: screenSize), animated: animated)
+            scrollView.scrollRectToVisible(rightRect, animated: animated)
+            mainContainerView.addGestureRecognizer(tap!)
         }
     }
     
     func toggleLeftMenu() {
+        guard isVisible else { return }
         if isLeftMenuOpen {
             closeMenu()
         }else{
@@ -199,6 +219,7 @@ class MainContainerViewController: UIViewController {
     }
     
     func toggleRightMenu() {
+        guard isVisible else { return }
         if isRightMenuOpen {
             closeMenu()
         }else{
@@ -207,10 +228,14 @@ class MainContainerViewController: UIViewController {
     }
     
     func closeMenu(){
+        guard isVisible else { return }
         scrollView.scrollRectToVisible(mainContainerView.frame, animated: animated)
+        if tap != nil {
+            mainContainerView.removeGestureRecognizer(tap!)
+        }
     }
     
-    // gesture listeners
+    // MARK: gesture listeners
     func mainViewTap(){
         if isMenuOpen {
             closeMenu()
@@ -234,17 +259,29 @@ class MainContainerViewController: UIViewController {
     }
     
 
-    // helper shortcuts for menu operations
-    static func toggleLeftMenu(){
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftMenu", object: nil)
-    }
+    // MARK: shortcuts for menu operations
+//    static func toggleLeftMenu(){
+//        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftMenu", object: nil)
+//    }
+//    
+//    static func toggleRightMenu(){
+//        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightMenu", object: nil)
+//    }
+//    
+//    static func closeMenu(){
+//        NSNotificationCenter.defaultCenter().postNotificationName("closeMenu", object: nil)
+//    }
     
-    static func toggleRightMenu(){
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightMenu", object: nil)
-    }
-    
-    static func closeMenu(){
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenu", object: nil)
+    static func parentMenuContainer(viewController: UIViewController) -> MenuContainerView? {
+        var vc: UIViewController? = viewController
+        while vc != nil {
+            if let menu = vc!.view as? MenuContainerView {
+                return menu
+            }else{
+                vc = vc?.parentViewController
+            }
+        }
+        return nil
     }
 }
 
@@ -253,5 +290,9 @@ extension UIView {
         for view in subviews {
             view.removeFromSuperview()
         }
+    }
+    
+    private var isVisible: Bool {
+        return window != nil
     }
 }

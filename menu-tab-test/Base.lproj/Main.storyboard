@@ -162,7 +162,7 @@
                                 <rect key="frame" x="270" y="285" width="60" height="30"/>
                                 <state key="normal" title="continue"/>
                                 <connections>
-                                    <segue destination="euW-fO-f1Z" kind="show" id="4Ni-fx-iz7"/>
+                                    <segue destination="COP-er-kRU" kind="show" id="WsK-Qd-9PN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,23 +177,23 @@
             </objects>
             <point key="canvasLocation" x="-691" y="788"/>
         </scene>
-        <!--MainContainer View Controller-->
-        <scene sceneID="t48-Qz-ZRr">
+        <!--Menu Container View Controller-->
+        <scene sceneID="isE-pX-nEa">
             <objects>
-                <viewController id="euW-fO-f1Z" userLabel="MainContainer View Controller" customClass="MyMainViewController" customModule="menu_tab_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="COP-er-kRU" customClass="MenuContainerViewController" customModule="menu_tab_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nWP-WA-E6i"/>
-                        <viewControllerLayoutGuide type="bottom" id="dPx-2H-HRR"/>
+                        <viewControllerLayoutGuide type="top" id="itF-xD-4Vh"/>
+                        <viewControllerLayoutGuide type="bottom" id="iKM-b6-8mb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pe1-1n-6UR">
+                    <view key="view" contentMode="scaleToFill" id="Zpr-QJ-cHL" customClass="MenuContainerView" customModule="menu_tab_test" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SK7-rO-liG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q64-zc-n9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="788"/>
+            <point key="canvasLocation" x="-28" y="788"/>
         </scene>
         <!--First-->
         <scene sceneID="ZkM-0C-VKT">

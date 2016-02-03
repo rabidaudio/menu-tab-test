@@ -20,11 +20,13 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func openLeftMenu(sender: AnyObject) {
-        MainContainerViewController.toggleLeftMenu()
+//        MainContainerViewController.toggleLeftMenu()
+        MenuContainerView.parentMenuContainer(self)?.toggleLeftMenu()
     }
 
     @IBAction func openRightMenu(sender: AnyObject) {
-        MainContainerViewController.toggleRightMenu()
+//        MainContainerViewController.toggleRightMenu()
+        MenuContainerView.parentMenuContainer(self)?.toggleRightMenu()
     }
 }
 
