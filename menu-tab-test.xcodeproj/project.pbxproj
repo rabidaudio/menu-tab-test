@@ -17,6 +17,7 @@
 		CEEA19041C60F081009BE347 /* MenuContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19031C60F081009BE347 /* MenuContainerView.swift */; };
 		CEEA190A1C61C402009BE347 /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */; };
 		CEEA19121C6248A2009BE347 /* MyNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19111C6248A2009BE347 /* MyNavViewController.swift */; };
+		CEEA19141C6250E3009BE347 /* KeyboardAvoidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CEEA19031C60F081009BE347 /* MenuContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerView.swift; sourceTree = "<group>"; };
 		CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
 		CEEA19111C6248A2009BE347 /* MyNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavViewController.swift; sourceTree = "<group>"; };
+		CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				CEEA19031C60F081009BE347 /* MenuContainerView.swift */,
 				CEEA19091C61C402009BE347 /* MenuContainerViewController.swift */,
 				CEEA19111C6248A2009BE347 /* MyNavViewController.swift */,
+				CEEA19131C6250E3009BE347 /* KeyboardAvoidViewController.swift */,
 			);
 			path = "menu-tab-test";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				CEEA18EE1C6064E8009BE347 /* AppDelegate.swift in Sources */,
 				CEEA190A1C61C402009BE347 /* MenuContainerViewController.swift in Sources */,
 				CEEA18F01C6064E8009BE347 /* FirstViewController.swift in Sources */,
+				CEEA19141C6250E3009BE347 /* KeyboardAvoidViewController.swift in Sources */,
 				CEEA19121C6248A2009BE347 /* MyNavViewController.swift in Sources */,
 				CEEA19021C60659D009BE347 /* MenuViewController.swift in Sources */,
 			);
